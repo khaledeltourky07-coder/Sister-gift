@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>هدية لأختي ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; overflow:hidden;
+  font-family:Tahoma,Arial,sans-serif;
+  background:linear-gradient(135deg,#fff0f6,#f7eaff,#e9f7ff);
+  display:flex; align-items:center; justify-content:center;
+  color:#4b3040;
+}
+.bg span{
+  position:fixed; bottom:-40px; font-size:22px; opacity:.55;
+  animation:up linear infinite;
+}
+@keyframes up{to{transform:translateY(-115vh) rotate(360deg);opacity:0}}
+.card{
+  width:min(92%,520px); padding:34px 24px; text-align:center;
+  background:rgba(255,255,255,.82); border-radius:28px;
+  box-shadow:0 18px 50px rgba(100,60,100,.16);
+  backdrop-filter:blur(8px); position:relative; z-index:2;
+}
+h1{margin:0 0 12px;font-size:32px;color:#d24d86}
+p{font-size:19px;line-height:1.8;margin:10px 0}
+.gift{
+  font-size:105px; cursor:pointer; display:inline-block;
+  animation:bounce 1.4s infinite; user-select:none;
+}
+@keyframes bounce{50%{transform:translateY(-12px) rotate(-3deg)}}
+button{
+  border:0; border-radius:999px; padding:13px 25px;
+  font-size:17px; cursor:pointer; margin:8px;
+  background:#e85b93; color:white; box-shadow:0 8px 18px #e85b9344;
+}
+button.alt{background:#8b72d8}
+.hidden{display:none}
+.message{
+  font-size:21px; line-height:2; color:#5b3c4e;
+  animation:appear .7s ease;
+}
+@keyframes appear{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
+.small{font-size:14px;color:#8a7180;margin-top:18px}
+#laugh{font-size:28px;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="bg">
+<span style="left:5%;animation-duration:9s">❤️</span>
+<span style="left:17%;animation-duration:12s">🌸</span>
+<span style="left:31%;animation-duration:8s">✨</span>
+<span style="left:48%;animation-duration:11s">💗</span>
+<span style="left:64%;animation-duration:10s">🌷</span>
+<span style="left:80%;animation-duration:13s">❤️</span>
+<span style="left:92%;animation-duration:9s">✨</span>
+</div>
+
+<div class="card" id="start">
+  <div class="gift" onclick="openGift()">🎁</div>
+  <h1>عندي هدية صغيرة ليكي 👀</h1>
+  <p>بس ممنوع تفتحيها قبل ما تضغطي على الهدية 😂❤️</p>
+  <button onclick="openGift()">افتحي الهدية 🎁</button>
+  <div class="small">من أخوكي اللي بيحبك ❤️</div>
+</div>
+
+<div class="card hidden" id="gift">
+  <div style="font-size:60px">🌸❤️🌸</div>
+  <h1>إلى أختي الجميلة</h1>
+  <div class="message">
+    يمكن مش بقولها ليكي كل يوم،<br>
+    بس وجودك في حياتي حاجة جميلة جدًا. ❤️<br><br>
+    ربنا يخليكي ليا، ويفرح قلبك،<br>
+    ويحققلك كل حاجة نفسك فيها. 🌷<br><br>
+    ومهما كبرنا ومهما حصل…<br>
+    هتفضلي دايمًا أختي الغالية. 🥹❤️
+  </div>
+  <button onclick="question()">في مفاجأة تانية 👀</button>
+</div>
+
+<div class="card hidden" id="question">
+  <h1>سؤال مهم جدًا 😂</h1>
+  <p>هل أنا أحسن أخ في العالم؟ 👀</p>
+  <button onclick="yes()">طبعًااا 😂❤️</button>
+  <button class="alt" onclick="no()">لأ 😭</button>
+  <div id="laugh"></div>
+</div>
+
+<div class="card hidden" id="final">
+  <div style="font-size:75px">🏆😂❤️</div>
+  <h1>كنت عارف! 😎</h1>
+  <p class="message">
+    خلاص كده الهدية وصلت 😂❤️<br>
+    بحبك يا أختي، وربنا يديمك في حياتي ويخلي بينا المحبة دايمًا. 🌷
+  </p>
+  <p>— أخوكي ❤️</p>
+</div>
+
+<script>
+function show(id){
+  document.querySelectorAll('.card').forEach(x=>x.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+}
+function openGift(){show('gift')}
+function question(){show('question')}
+function yes(){show('final')}
+function no(){
+  const l=document.getElementById('laugh');
+  l.textContent='❌ إجابة غير مقبولة 😂😂😂';
+  setTimeout(()=>{l.textContent='جربي تاني… الإجابة الصحيحة واضحة 😎❤️'},900);
+}
+</script>
+</body>
+</html>
